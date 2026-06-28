@@ -1,0 +1,174 @@
+{
+  "project_name": "K&P Events",
+  "domain": "Event Management",
+  "theme_archetype": "Archetype 5: Luxury (Dark Mode Base)",
+  "design_philosophy": "Nocturnal Opulence. Combine the visual gravitas of dark mode (Deep Navy) with the opulence of Gold and the sophistication of Royal Purple. Use heavy negative space, glassmorphism, and cinematic lighting. Avoid 'default SaaS' aesthetics. Every section must feel like a premium editorial magazine.",
+  "colors": {
+    "primary": {
+      "name": "Dark Navy",
+      "hex": "#0B132B",
+      "usage": "Base background for the entire application, hero overlays, dark sections."
+    },
+    "secondary": {
+      "name": "Gold",
+      "hex": "#D4AF37",
+      "usage": "Primary CTAs, borders on premium cards, highlighted pricing tier, typography accents, and decorative lines/icons."
+    },
+    "accent": {
+      "name": "Royal Purple",
+      "hex": "#6C63FF",
+      "usage": "Subtle glow effects behind glass cards, gradient overlays, secondary badges, hover states on interactive elements."
+    },
+    "neutral_light": {
+      "name": "White",
+      "hex": "#FFFFFF",
+      "usage": "Primary headings, high-contrast text."
+    },
+    "neutral_muted": {
+      "name": "Light Gray",
+      "hex": "#F3F4F6",
+      "usage": "Body copy, secondary text, muted descriptions."
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "'Playfair Display', serif",
+      "body": "'Manrope', sans-serif"
+    },
+    "rules": {
+      "h1": "text-5xl md:text-7xl font-bold tracking-tight text-white",
+      "h2": "text-4xl md:text-5xl font-semibold tracking-tight text-white",
+      "h3": "text-2xl md:text-3xl font-medium text-white",
+      "body": "text-base md:text-lg text-gray-200 leading-relaxed",
+      "overline": "text-sm tracking-[0.2em] uppercase text-[#D4AF37] font-semibold"
+    },
+    "imports": "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');"
+  },
+  "layout_and_spacing": {
+    "philosophy": "Generous Spacing Protocol. Use 2-3x more padding than standard web apps to establish a premium feel.",
+    "section_padding": "py-24 md:py-32",
+    "container_padding": "px-6 md:px-12",
+    "grid_gap": "gap-8 md:gap-12",
+    "border_radius": "rounded-2xl"
+  },
+  "surfaces_and_textures": {
+    "glassmorphism": {
+      "classes": "bg-[#0B132B]/60 backdrop-blur-xl border border-white/10",
+      "usage": "Sticky Nav, Booking Modal, Testimonial Cards."
+    },
+    "premium_card": {
+      "classes": "bg-[#0B132B] border border-[#D4AF37]/30 shadow-[0_8px_32px_rgba(108,99,255,0.15)] rounded-2xl overflow-hidden",
+      "hover": "hover:-translate-y-2 hover:border-[#D4AF37] hover:shadow-[0_12px_48px_rgba(108,99,255,0.3)] transition-all duration-500 ease-out"
+    }
+  },
+  "sections_architecture": {
+    "page_loader": {
+      "style": "Full-screen Deep Navy background. Gold brand mark (K&P) pulsing or drawing via SVG animation. Fades out smoothly on mount."
+    },
+    "navigation": {
+      "style": "Fixed/Sticky top. Glassmorphism surface. Logo left (Playfair text), Links center (Manrope, hover text-gold), Book Event CTA right (Gold button).",
+      "mobile": "Hamburger menu opening a full-screen deep purple/navy glassmorphism overlay."
+    },
+    "hero_slider": {
+      "layout": "Full-screen (h-screen). Swiper or Framer Motion slider.",
+      "content": "Images with bg-[#0B132B]/60 overlay for text contrast. H1: 'We Turn Your Dreams Into Unforgettable Events'. Subhead below. Two CTAs: Primary (Gold background, black text), Secondary (Transparent with Gold border).",
+      "animation": "Text must stagger in (fade up) on slide change."
+    },
+    "about_counters": {
+      "layout": "Grid of 4 (grid-cols-2 md:grid-cols-4).",
+      "features": "react-countup for numbers (500+, 300+, 10, 50). Large gold numbers, light gray labels. Icons in Royal Purple."
+    },
+    "services_grid": {
+      "layout": "Bento Grid (Tetris style). Mix of large and small cards.",
+      "content": "10 services listed. Dark cards with subtle Royal Purple glow on hover. Icons or background images for Birthday, Wedding, Corporate, etc."
+    },
+    "featured_events": {
+      "layout": "Grid (grid-cols-1 md:grid-cols-2).",
+      "style": "Premium cards with large imagery. Price tag prominent in Gold (e.g., ₹1,50,000+). Text overlay on gradient at the bottom of the image."
+    },
+    "masonry_gallery": {
+      "features": "Filter buttons (All/Weddings/Birthday/Business/Corporate). Framer motion layout transitions. Lightbox on click.",
+      "style": "Images must have zero gap or minimal gap, pure editorial feel. Hover reveals event name."
+    },
+    "pricing_packages": {
+      "layout": "3-column grid.",
+      "style": "Silver (Gray borders), Gold (Highlighted, scaled up 1.05, prominent Gold border, glowing shadow), Diamond (Purple/Navy gradient borders)."
+    },
+    "process_timeline": {
+      "layout": "Vertical line on mobile, alternating left/right on desktop.",
+      "style": "Gold line, Royal purple nodes. Consultation → Planning → Designing → Execution → Celebration."
+    },
+    "testimonials": {
+      "layout": "Swiper carousel. Glassmorphism cards. Star ratings in Gold."
+    },
+    "team": {
+      "layout": "Grid of cards. Grayscale images that turn color on hover. Social links slide up on hover."
+    },
+    "background_video": {
+      "style": "Section with a looping luxury event video (simulated with a high-end image and slow CSS zoom if video not available) + deep navy overlay + 'Book Consultation' CTA."
+    },
+    "faq": {
+      "style": "Shadcn Accordion. Customized with dark background, gold plus/minus icons, and bottom borders only (border-white/10)."
+    },
+    "contact": {
+      "layout": "Split 50/50. Left: Form. Right: Map/Info.",
+      "style": "Form uses strict Shadcn inputs customized with dark backgrounds and gold focus rings."
+    },
+    "footer": {
+      "style": "Massive padding (py-24). Deepest Navy (#050914). Newsletter input with Gold submit button. Large 'K&P Events' watermark."
+    },
+    "floating_elements": {
+      "whatsapp": "Fixed bottom right. Green/Gold.",
+      "back_to_top": "Appears on scroll. Gold border, dark background."
+    },
+    "booking_modal": {
+      "trigger": "'Book Event' buttons.",
+      "style": "Shadcn Dialog. Glassmorphism overlay. Multi-field form (Name, Phone, Email, Event Type, Guests, Budget, Date, Location). Gold submit button."
+    }
+  },
+  "assets": {
+    "hero_slider": [
+      "https://images.unsplash.com/photo-1675247488725-22d1b78e75db",
+      "https://images.unsplash.com/photo-1764255510960-deee566a91f0",
+      "https://images.unsplash.com/photo-1740120424442-ccd013ec9581"
+    ],
+    "weddings": [
+      "https://images.unsplash.com/photo-1536392706976-e486e2ba97af",
+      "https://images.unsplash.com/photo-1740120424442-ccd013ec9581"
+    ],
+    "corporate": [
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87",
+      "https://images.unsplash.com/photo-1558008258-3256797b43f3"
+    ],
+    "birthday": [
+      "https://images.unsplash.com/photo-1544155892-b2b6c64204fc",
+      "https://images.unsplash.com/photo-1604668915840-580c30026e5f"
+    ],
+    "concert": [
+      "https://images.pexels.com/photos/13230484/pexels-photo-13230484.jpeg"
+    ],
+    "private_party": [
+      "https://images.unsplash.com/photo-1561065270-5c2af775b542"
+    ]
+  },
+  "animations": {
+    "libraries": ["framer-motion", "lucide-react", "react-countup"],
+    "scroll": "Mandatory setup of smooth scrolling for the entire page to feel premium.",
+    "interactions": "Hover states must transition multiple properties (e.g., border color, shadow, and transform). All page sections should fade-up on scroll using framer-motion (whileInView)."
+  },
+  "testing_attributes": {
+    "rules": "All interactive elements (buttons, inputs, links, tabs, accordion triggers) MUST have a 'data-testid' attribute in kebab-case."
+  },
+  "instructions_to_main_agent": [
+    "Use JavaScript (.jsx/.js) for all files. DO NOT use TypeScript (.tsx/.ts).",
+    "Install and use 'framer-motion' for slider, masonry filter transitions, and scroll reveal effects.",
+    "Install 'lucide-react' for icons.",
+    "Install 'react-countup' for the Animated Stats section.",
+    "Build the layout as a single-page application (SPA) where the nav links scroll to sections.",
+    "Use Shadcn UI components for the Accordion (FAQ), Dialog (Booking Modal), and Forms, but HEAVILY customize the CSS to match the Dark/Gold/Purple luxury theme.",
+    "Ensure contrast is accessible. Gold on White is bad, but Gold (#D4AF37) on Dark Navy (#0B132B) is excellent.",
+    "Never use raw transparent backgrounds in headers or overlays over images. Always use black/navy + opacity (e.g., bg-black/50) or backdrop-blur.",
+    "Ensure the booking form uses Shadcn Form and Input/Select primitives.",
+    "Do not use generic gray borders; tint them with the brand colors (e.g., border-[#D4AF37]/20)."
+  ]
+}
