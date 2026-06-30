@@ -1,34 +1,38 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
-.App-header {
-    background-color: #0f0f10;
+/* App-specific overrides for shadcn primitives */
+.App {
+    background-color: #0B132B;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
 }
 
-.App-link {
-    color: #61dafb;
+/* Dark dialog/select customization */
+[data-radix-popper-content-wrapper] [role="listbox"],
+[data-radix-popper-content-wrapper] [role="menu"] {
+    background: #0B132B !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    color: #F3F4F6 !important;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Custom input styles */
+.luxury-input {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    color: #F3F4F6 !important;
+    border-radius: 12px !important;
+    height: 52px !important;
+    padding: 0 18px !important;
+    transition: all 0.3s ease !important;
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.95rem;
+}
+.luxury-input:focus {
+    outline: none !important;
+    border-color: #D4AF37 !important;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+}
+textarea.luxury-input {
+    height: auto !important;
+    min-height: 120px;
+    padding: 16px 18px !important;
 }

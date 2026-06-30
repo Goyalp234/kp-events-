@@ -1,56 +1,67 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
+import { Toaster } from "@/components/ui/sonner";
+import Loader from "./components/Loader";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Services from "./components/Services";
+import FeaturedEvents from "./components/FeaturedEvents";
+import Gallery from "./components/Gallery";
+import Packages from "./components/Packages";
+import WhyChooseUs from "./components/WhyChooseUs";
+import Process from "./components/Process";
+import Testimonials from "./components/Testimonials";
+import Stats from "./components/Stats";
+import Team from "./components/Team";
+import VideoSection from "./components/VideoSection";
+import FAQ from "./components/FAQ";
+import Blog from "./components/Blog";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import BookingModal from "./components/BookingModal";
+import FloatingButtons from "./components/FloatingButtons";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
+export default function App() {
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const openBooking = () => setBookingOpen(true);
+  const closeBooking = () => setBookingOpen(false);
 
   return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
-
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <div className="App relative">
+      <Loader />
+      <Navbar onBook={openBooking} />
+      <main>
+        <Hero onBook={openBooking} />
+        <About />
+        <Services onBook={openBooking} />
+        <FeaturedEvents onBook={openBooking} />
+        <Gallery />
+        <Packages onBook={openBooking} />
+        <WhyChooseUs />
+        <Process />
+        <Testimonials />
+        <Stats />
+        <Team />
+        <VideoSection onBook={openBooking} />
+        <FAQ />
+        <Blog />
+        <Contact />
+      </main>
+      <Footer />
+      <FloatingButtons onBook={openBooking} />
+      <BookingModal open={bookingOpen} onClose={closeBooking} />
+      <Toaster
+        theme="dark"
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: "#0B132B",
+            border: "1px solid rgba(212,175,55,0.4)",
+            color: "#fff",
+          },
+        }}
+      />
     </div>
   );
 }
-
-export default App;
